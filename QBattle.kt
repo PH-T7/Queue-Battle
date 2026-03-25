@@ -4,14 +4,16 @@ object PyrrhicVictor {
     fun queueBattle(dist:int,vararg armies:IntArray): Pair<Int,IntArray> {
         Class Soldier(
             val id: Int,
-            val life: Int,
-            val weapons: String,
             val bulletspeed:Int
         )
 
-        val filaDeSoldados = exércitoA.mapIndexed { index, speed -> 
-        Soldier(id = index, bulletSpeed = speed) 
-        }
+        class Army(
+            val id: Int,
+            var soldiers: ArrayDeque<Soldier>, // A nossa Fila mutável de soldados
+            var target: Army?                  // O alvo (pode ser nulo se ele vencer)
+        )
+
+        
         
 
     }
